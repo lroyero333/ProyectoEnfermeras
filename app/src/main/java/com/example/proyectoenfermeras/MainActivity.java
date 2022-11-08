@@ -21,6 +21,7 @@ import com.example.proyectoenfermeras.entities.Paciente;
 
 import java.util.ArrayList;
 
+//mi lindo comentario
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Paciente> listadoPaciente;
