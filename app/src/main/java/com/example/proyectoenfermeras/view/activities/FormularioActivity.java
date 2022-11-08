@@ -11,10 +11,12 @@ import android.widget.EditText;
 
 import com.example.proyectoenfermeras.R;
 import com.example.proyectoenfermeras.model.entities.Paciente;
+import com.example.proyectoenfermeras.model.repository.PacienteRepository;
 
 public class FormularioActivity extends AppCompatActivity {
 
     private EditText etNombre, etApellido, etUrlImagen;
+    private PacienteRepository miPacienteRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +49,7 @@ public class FormularioActivity extends AppCompatActivity {
 
         Paciente nuevoPaciente = new Paciente(nombre, apellido, url);
 
-
+        miPacienteRepository.insertarPaciente(nuevoPaciente);
 
         Intent datos = new Intent();
 
