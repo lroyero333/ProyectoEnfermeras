@@ -24,7 +24,7 @@ import com.example.proyectoenfermeras.view.adapters.AdaptadorPersonalizado;
 
 import java.util.ArrayList;
 
-//mi lindo comentario
+//mi lindo comentario.
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Paciente> listadoPaciente;
