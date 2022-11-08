@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ProyectoEnfermeras</string>
+    <string name="Nombretext">Nombre</string>
+    <string name="Apellidotext">Apellido</string>
+    <string name="UrlImagentext">Url Imagen</string>
+    <string name="Guardartext">Guardar</string>
+    <string name="errorDeValidacion">Ingrese un valor</string>
+    <string name="Roltext">Rol</string>
+    <string name="Contrasenatext">Contraseña</string>
+    <string name="Usuariotext">Usuario</string>
+    <string name="Ingresartext">Ingresar</string>
+    <string name="errorLogin">Credenciales incorrectas</string>
+    <string name="cerrarSesion">Cerrar Sesion</string>
+    <string name="Comentariotxt">Comentario:</string>
+    <string name="Hechoportext">Hecho por:</string>
+</resources>
