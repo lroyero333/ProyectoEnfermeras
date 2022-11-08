@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1063618103517",
+    "project_id": "proyectoenfermeras-93f7d",
+    "storage_bucket": "proyectoenfermeras-93f7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1063618103517:android:8da1e060fb576aebbb3334",
+        "android_client_info": {
+          "package_name": "com.example.proyectoenfermeras"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1063618103517-h1dmat06jsscl68m97erde8m8tslsfqs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqeWRjiGMuByuiEPeHSbG0m9o-0AkhUdc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1063618103517-h1dmat06jsscl68m97erde8m8tslsfqs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
