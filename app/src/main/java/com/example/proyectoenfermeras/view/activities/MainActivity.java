@@ -1,4 +1,4 @@
-package com.example.proyectoenfermeras;
+package com.example.proyectoenfermeras.view.activities;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -17,7 +17,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.proyectoenfermeras.entities.Paciente;
+import com.example.proyectoenfermeras.R;
+import com.example.proyectoenfermeras.model.entities.Paciente;
+import com.example.proyectoenfermeras.model.repository.PacienteRepository;
+import com.example.proyectoenfermeras.view.adapters.AdaptadorPersonalizado;
 
 import java.util.ArrayList;
 
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rv_paciente;
     private Button btnAgregar;
     private AdaptadorPersonalizado adaptador;
+    private PacienteRepository miPacienteRepository;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -51,7 +55,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        miPacienteRepository = new PacienteRepository(getApplicationContext());
+
         cargarFakeAlListado();
+
+
 
         adaptador = new AdaptadorPersonalizado(listadoPaciente);
         adaptador.setOnItemClickListener(new AdaptadorPersonalizado.OnItemClickListener() {
@@ -73,11 +82,26 @@ public class MainActivity extends AppCompatActivity {
 
         listadoPaciente = new ArrayList<>();
 
-        Paciente seriePokemon = new Paciente("Pokemon", "Pikachu", "https://www.ayayay.tv/wp-content/uploads/2016/02/portada-pokemon.jpg");
-        Paciente serieTheBoys = new Paciente("The boys", "Critica a la sociedad.", "https://arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/K5S52WFLOZEBTMIA7Q23ZV4CTM.jpg");
+        Paciente seriePokemon = new Paciente("Maria", "Mantilla", "https://www.ayayay.tv/wp-content/uploads/2016/02/portada-pokemon.jpg");
+        Paciente serieTheBoys = new Paciente("Eduardo", "Sarmiento", "https://arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/K5S52WFLOZEBTMIA7Q23ZV4CTM.jpg");
 
         listadoPaciente.add(seriePokemon);
         listadoPaciente.add(serieTheBoys);
+    }
+
+    private void cargarDatosBaseDeDatos(){
+        listadoPaciente = (ArrayList<Paciente>) miPacienteRepository.obtenerTodoPacientes();
+
+        if(listadoPaciente.isEmpty()) {
+
+            Paciente seriePokemon = new Paciente("Maria", "Mantilla", "https://www.ayayay.tv/wp-content/uploads/2016/02/portada-pokemon.jpg");
+            Paciente serieTheBoys = new Paciente("Eduardo", "Sarmiento", "https://arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/K5S52WFLOZEBTMIA7Q23ZV4CTM.jpg");
+
+            miPacienteRepository.insertarPaciente(seriePokemon);
+            miPacienteRepository.insertarPaciente(serieTheBoys);
+
+            listadoPaciente = (ArrayList<Paciente>) miPacienteRepository.obtenerTodoPacientes();
+        }
     }
 
     public void clickIrFormulario(View view){
@@ -98,6 +122,9 @@ public class MainActivity extends AppCompatActivity {
                     listadoPaciente.add(serieAtrapada);
                     adaptador.setListadoDatos(listadoPaciente);
                 }
+
+                cargarDatosBaseDeDatos();
+                adaptador.setListadoDatos(listadoPaciente);
             }
         }
     });

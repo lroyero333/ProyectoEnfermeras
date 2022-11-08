@@ -1,7 +1,6 @@
-package com.example.proyectoenfermeras;
+package com.example.proyectoenfermeras.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +8,10 @@ import android.os.Parcelable;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.proyectoenfermeras.entities.Paciente;
+import com.example.proyectoenfermeras.R;
+import com.example.proyectoenfermeras.model.entities.Paciente;
 
-public class FormularioActivity extends AppCompatActivity {
+public class FormularioReporte extends AppCompatActivity {
 
     private EditText etNombre, etApellido, etUrlImagen;
 
@@ -51,7 +51,7 @@ public class FormularioActivity extends AppCompatActivity {
         setResult(RESULT_OK, datos);
 
         finish();
-        Intent intent = new Intent(FormularioActivity.this, MainActivity.class);
+        Intent intent = new Intent(FormularioReporte.this, MainActivity.class);
         startActivity(intent);
 
     }

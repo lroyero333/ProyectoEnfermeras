@@ -1,12 +1,22 @@
-package com.example.proyectoenfermeras.entities;
+package com.example.proyectoenfermeras.model.entities;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+import java.io.Serializable;
 import java.util.ArrayList;
-
-public class Paciente {
-
+@Entity
+public class Paciente implements Serializable {
+    @PrimaryKey(autoGenerate = true)
+    private int identificador;
+    @ColumnInfo
     private String nombre;
+    @ColumnInfo
     private String apellido;
+    @ColumnInfo
     private String url;
+    @ColumnInfo
     private ArrayList<Reporte> reportes;
 
     public Paciente(String nombre, String apellido, String url) {
@@ -16,6 +26,7 @@ public class Paciente {
     }
 
     public Paciente(String nombre, String apellido, String url, ArrayList<Reporte> reportes) {
+        this.identificador = 0;
         this.nombre = nombre;
         this.apellido = apellido;
         this.url = url;

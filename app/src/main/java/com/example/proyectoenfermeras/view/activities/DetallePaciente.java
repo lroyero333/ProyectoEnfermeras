@@ -1,8 +1,10 @@
-package com.example.proyectoenfermeras;
+package com.example.proyectoenfermeras.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.proyectoenfermeras.R;
 
 public class DetallePaciente extends AppCompatActivity {
 

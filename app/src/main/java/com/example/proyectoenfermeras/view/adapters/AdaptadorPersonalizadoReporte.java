@@ -1,4 +1,4 @@
-package com.example.proyectoenfermeras;
+package com.example.proyectoenfermeras.view.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +10,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectoenfermeras.entities.Paciente;
-import com.example.proyectoenfermeras.entities.Reporte;
-import com.squareup.picasso.Picasso;
+import com.example.proyectoenfermeras.R;
+import com.example.proyectoenfermeras.model.entities.Reporte;
 
 import java.util.ArrayList;
 

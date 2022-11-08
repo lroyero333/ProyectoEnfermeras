@@ -1,4 +1,4 @@
-package com.example.proyectoenfermeras.entities;
+package com.example.proyectoenfermeras.model.entities;
 
 public class Usuario {
 

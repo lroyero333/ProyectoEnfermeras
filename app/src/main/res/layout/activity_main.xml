@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.activities.MainActivity">
 
     <TextView
         android:id="@+id/textView7"
@@ -18,8 +18,9 @@
         android:id="@+id/rv_paciente"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:layout_marginTop="52dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregar"
+        tools:layout_editor_absoluteX="16dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -28,6 +29,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="clickIrFormulario"
-        android:text="Button" />
+        android:text="Agregar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
